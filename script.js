@@ -2,6 +2,8 @@ const btnInput = document.querySelector('.prize-btn');
 const resultInput = document.querySelector('.result');
 const giftInput = document.querySelector('.gift');
 const prizeInputs = document.querySelector('.btn-value');
+const sound = new Audio("sound.wav");//path paste here
+const completedSound = new Audio("completion sound.wav"); // paste the path here
 
 const gifts = [
   '100 Cash',
@@ -73,7 +75,40 @@ btnInput.addEventListener('click', () =>{
 
   resultInput.textContent = 'Please wait results are calculating....'
 
-  setTimeout(() =>{  
+//   setTimeout(() =>{  
+//   let final = Math.floor(Math.random() * 50);
+//   final = final + 1;
+
+//   let winning = gifts[final - 1];
+
+// resultInput.textContent = `Your Lucky Number Is: ${final} and your winning prize is " ${winning.toUpperCase()} "`;
+
+// document.getElementById(final).classList.add('winningbox');
+
+//   },5000);
+
+  let secondsCounter = 0;
+const interval = setInterval(function() {
+  sound.pause();
+  sound.currentTime = 0;
+  sound.play();
+  secondsCounter = secondsCounter + 1;
+
+ const timer = Math.floor(Math.random() * 50 + 1);
+ console.log(timer);
+ for(let i = 1; i <= 50; i++){
+  if(i === timer){
+    document.getElementById(i).classList.add('highlightedBox');
+  }else{
+    document.getElementById(i).classList.remove('highlightedBox');
+
+  }
+
+ }
+//  document.getElementById(timer).classList.add('highlightedBox');
+
+ if(secondsCounter === 5){
+      
   let final = Math.floor(Math.random() * 50);
   final = final + 1;
 
@@ -81,12 +116,14 @@ btnInput.addEventListener('click', () =>{
 
 resultInput.textContent = `Your Lucky Number Is: ${final} and your winning prize is " ${winning.toUpperCase()} "`;
 
+document.getElementById(timer).classList.remove('highlightedBox');
+
 document.getElementById(final).classList.add('winningbox');
+clearInterval(interval);
+completedSound.pause();
+completedSound.currentTime = 0;
+completedSound.play();
+ }
 
-  },5000);
-
-  
-
-
-
+},1000);
 });

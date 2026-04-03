@@ -50,4 +50,7 @@
       background-color: green;
       color: white;
     }
+    .highlightedBox{
+      border: 3px solid red;
+    }
   

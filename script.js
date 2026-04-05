@@ -68,7 +68,7 @@ gifts.forEach(function(values, i){
 prizeInputs.innerHTML = prizeValues;
 
 btnInput.addEventListener('click', () =>{
-  for(let i = 1; i < 50; i++){
+  for(let i = 1; i <= 50; i++){
 
     document.getElementById(i).classList.remove('winningbox');
   }
@@ -92,6 +92,7 @@ const interval = setInterval(function() {
   sound.pause();
   sound.currentTime = 0;
   sound.play();
+  
   secondsCounter = secondsCounter + 1;
 
  const timer = Math.floor(Math.random() * 50 + 1);
@@ -120,6 +121,7 @@ document.getElementById(timer).classList.remove('highlightedBox');
 
 document.getElementById(final).classList.add('winningbox');
 clearInterval(interval);
+sound.pause();
 completedSound.pause();
 completedSound.currentTime = 0;
 completedSound.play();

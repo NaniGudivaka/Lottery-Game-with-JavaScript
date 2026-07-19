@@ -75,17 +75,7 @@ btnInput.addEventListener('click', () =>{
 
   resultInput.textContent = 'Please wait results are calculating....'
 
-//   setTimeout(() =>{  
-//   let final = Math.floor(Math.random() * 50);
-//   final = final + 1;
 
-//   let winning = gifts[final - 1];
-
-// resultInput.textContent = `Your Lucky Number Is: ${final} and your winning prize is " ${winning.toUpperCase()} "`;
-
-// document.getElementById(final).classList.add('winningbox');
-
-//   },5000);
 
   let secondsCounter = 0;
 const interval = setInterval(function() {

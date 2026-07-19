@@ -96,7 +96,6 @@ const interval = setInterval(function() {
   }
 
  }
-//  document.getElementById(timer).classList.add('highlightedBox');
 
  if(secondsCounter === 5){
       
